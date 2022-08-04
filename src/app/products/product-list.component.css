@@ -1,0 +1,20 @@
+thead {
+	color: #337AB7;
+}
+
+.naviTable {
+	/*width: 50%;*/
+	display: block;
+     margin-left: auto;
+}
+.naviData {
+	width: 50%;
+}
+.naviButton {
+	width: 150px;
+	margin: 10px;
+}
+.left {
+	display: block;
+    margin-left: auto;
+}
