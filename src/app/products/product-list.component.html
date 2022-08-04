@@ -16,7 +16,7 @@
 		</div>
 	</div>
 	<div class="table-responsive">
-		<table class="table" *ngIf="pagedProducts.products.length">
+		<table class="table" *ngIf="pagedProducts?.products?.length">
 			<thead>
 				<tr>
 					<th><button class="btn btn-primary" (click)="toggleImage()">{{showImage ? "Hide" : "Show"}}
@@ -34,7 +34,7 @@
 					<td width=150px><img *ngIf="showImage" [src]="product.imageUrl"
 							[title]="product.productName | uppercase" [style.width.px]="imageWidth"
 							[style.margin.px]="imageMargin"></td>
-					<td>{{product.productName}}</td>
+					<td><a [routerLink]="['/products' , product.productId]">{{product.productName}}</a></td>
 					<td>{{product.productCode |lowercase| convertToSpaces:"-"}}</td>
 					<td>{{product.releaseDate}}</td>
 					<td>{{product.price|currency:"USD":"symbol":"1.2-2"}}</td>

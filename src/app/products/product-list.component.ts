@@ -18,12 +18,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
 	//_products: IProduct[] = [];
 	//p = {} as IProductsPaged;
-	pagedProducts : IProductsPaged = {
-		totalItems:0,
-		totalPages:0,
-		currentPage:0,
-		products:[]
-	};
+	pagedProducts : IProductsPaged | undefined;
 	//pagedProducts = {} as IProductsPaged ;
 	pageTitle: string = "Product List";
 	imageWidth: number = 30;
@@ -50,7 +45,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
 	performFilter(filterBy: string): IProduct[] {
 		filterBy = filterBy.toLocaleLowerCase();
-		return this.pagedProducts.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().includes(filterBy));
+		return this.pagedProducts?.products?.filter((product: IProduct) => product?.productName.toLocaleLowerCase().includes(filterBy));
 	}
 
 	toggleImage(): void {
